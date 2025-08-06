@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¿Es Original?</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1 id="title">¿Es Original?</h1>
+        <p id="subtitle">Aprende a identificar productos originales comparándolos con falsificaciones.</p>
+        <button onclick="toggleLanguage()">ES / EN</button>
+    </header>
+
+    <main>
+        <section class="busqueda">
+            <input type="text" id="busqueda" placeholder="Buscar por marca..." oninput="filtrarMarcas()">
+        </section>
+
+        <section class="comparacion-imagenes">
+            <h2 id="imgCompareTitle">Comparar Imágenes</h2>
+            <div class="upload-container">
+                <div>
+                    <label for="imgOriginal">Imagen Original</label>
+                    <input type="file" id="imgOriginal" accept="image/*" onchange="mostrarImagen(this, 'previewOriginal')">
+                    <img id="previewOriginal" src="" alt="Vista previa original">
+                </div>
+                <div>
+                    <label for="imgFake">Imagen Falsa</label>
+                    <input type="file" id="imgFake" accept="image/*" onchange="mostrarImagen(this, 'previewFake')">
+                    <img id="previewFake" src="" alt="Vista previa falsa">
+                </div>
+            </div>
+        </section>
+
+        <section class="categorias">
+            <h2 id="guidesTitle">Guías por Categoría</h2>
+            <ul id="listaCategorias">
+                <li>Nike</li>
+                <li>Adidas</li>
+                <li>Apple</li>
+                <li>Louis Vuitton</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>¿Es Original? © 2025 - Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
