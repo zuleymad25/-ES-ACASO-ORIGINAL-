@@ -17,25 +17,20 @@ main {
     padding: 20px;
 }
 
-.busqueda input {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 20px;
-}
-
-.comparacion-imagenes .upload-container {
+.upload-container {
     display: flex;
-    justify-content: space-around;
     flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 20px;
 }
 
 .upload-container div {
-    width: 45%;
+    flex: 1 1 45%;
     background: white;
     padding: 15px;
-    margin: 10px;
     border-radius: 8px;
     text-align: center;
+    box-shadow: 0 0 5px rgba(0,0,0,0.1);
 }
 
 .upload-container img {
@@ -44,18 +39,30 @@ main {
     border-radius: 5px;
 }
 
-.categorias ul {
-    list-style: none;
-    padding: 0;
-    display: flex;
-    flex-wrap: wrap;
+.marcas {
+    margin-top: 40px;
 }
 
-.categorias li {
-    background: #ddd;
-    padding: 10px 20px;
-    margin: 10px;
-    border-radius: 20px;
+.tarjetas-marcas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-around;
+}
+
+.tarjeta {
+    background: white;
+    border-radius: 10px;
+    padding: 15px;
+    width: 300px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.tarjeta img {
+    width: 100%;
+    border-radius: 8px;
+    margin-top: 10px;
 }
 
 footer {
@@ -64,4 +71,15 @@ footer {
     background: #111;
     color: white;
     margin-top: 40px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .upload-container div {
+        flex: 1 1 100%;
+    }
+    .tarjetas-marcas {
+        flex-direction: column;
+        align-items: center;
+    }
 }

@@ -3,21 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>¿Es Original?</title>
+    <title>¿Es Acaso Original?</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
-        <h1 id="title">¿Es Original?</h1>
+        <h1 id="title">¿Es Acaso Original?</h1>
         <p id="subtitle">Aprende a identificar productos originales comparándolos con falsificaciones.</p>
         <button onclick="toggleLanguage()">ES / EN</button>
     </header>
 
     <main>
-        <section class="busqueda">
-            <input type="text" id="busqueda" placeholder="Buscar por marca..." oninput="filtrarMarcas()">
-        </section>
-
         <section class="comparacion-imagenes">
             <h2 id="imgCompareTitle">Comparar Imágenes</h2>
             <div class="upload-container">
@@ -34,19 +30,30 @@
             </div>
         </section>
 
-        <section class="categorias">
-            <h2 id="guidesTitle">Guías por Categoría</h2>
-            <ul id="listaCategorias">
-                <li>Nike</li>
-                <li>Adidas</li>
-                <li>Apple</li>
-                <li>Louis Vuitton</li>
-            </ul>
+        <section class="marcas">
+            <h2>Ejemplos por Marca</h2>
+            <div class="tarjetas-marcas">
+                <div class="tarjeta">
+                    <h3>Nike</h3>
+                    <p>Revisa el logotipo, la costura del talón y el color de la suela.</p>
+                    <img src="https://via.placeholder.com/150" alt="Nike original vs fake">
+                </div>
+                <div class="tarjeta">
+                    <h3>Louis Vuitton</h3>
+                    <p>Verifica el patrón de monograma, la textura del cuero y las costuras internas.</p>
+                    <img src="https://via.placeholder.com/150" alt="LV original vs fake">
+                </div>
+                <div class="tarjeta">
+                    <h3>Apple AirPods</h3>
+                    <p>Observa la calidad del plástico, el grabado del logo y el empaque.</p>
+                    <img src="https://via.placeholder.com/150" alt="AirPods original vs fake">
+                </div>
+            </div>
         </section>
     </main>
 
     <footer>
-        <p>¿Es Original? © 2025 - Todos los derechos reservados.</p>
+        <p>¿Es Acaso Original? © 2025 - Todos los derechos reservados.</p>
     </footer>
 
     <script src="script.js"></script>
