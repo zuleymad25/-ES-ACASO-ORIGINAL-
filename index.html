@@ -28,25 +28,45 @@
                     <img id="previewFake" src="" alt="Vista previa falsa">
                 </div>
             </div>
+            <div class="tips">
+                <h3>Consejos para comparar:</h3>
+                <ul>
+                    <li>🧵 Observa la calidad y dirección de las costuras</li>
+                    <li>🎨 Compara los colores y el brillo</li>
+                    <li>🔍 Revisa el tamaño y la posición del logotipo</li>
+                    <li>📦 Examina la calidad del empaque</li>
+                    <li>👃 A veces el olor también delata falsificaciones</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="filtro">
+            <h2>Filtrar por Categoría</h2>
+            <select id="filtroCategoria" onchange="filtrarTarjetas()">
+                <option value="todas">Todas</option>
+                <option value="ropa">Ropa</option>
+                <option value="electronicos">Electrónicos</option>
+                <option value="lujo">Lujo</option>
+            </select>
         </section>
 
         <section class="marcas">
             <h2>Ejemplos por Marca</h2>
             <div class="tarjetas-marcas">
-                <div class="tarjeta">
+                <div class="tarjeta ropa">
                     <h3>Nike</h3>
-                    <p>Revisa el logotipo, la costura del talón y el color de la suela.</p>
-                    <img src="https://via.placeholder.com/150" alt="Nike original vs fake">
+                    <p>✔ Original: costuras firmes y simétricas<br>✘ Falso: logotipo descentrado</p>
+                    <img src="https://i.imgur.com/BLjMdqI.jpg" alt="Nike comparación">
                 </div>
-                <div class="tarjeta">
+                <div class="tarjeta lujo">
                     <h3>Louis Vuitton</h3>
-                    <p>Verifica el patrón de monograma, la textura del cuero y las costuras internas.</p>
-                    <img src="https://via.placeholder.com/150" alt="LV original vs fake">
+                    <p>✔ Original: patrón alineado y cuero firme<br>✘ Falso: colores deslavados y costuras débiles</p>
+                    <img src="https://i.imgur.com/VzBvKnp.jpg" alt="LV comparación">
                 </div>
-                <div class="tarjeta">
+                <div class="tarjeta electronicos">
                     <h3>Apple AirPods</h3>
-                    <p>Observa la calidad del plástico, el grabado del logo y el empaque.</p>
-                    <img src="https://via.placeholder.com/150" alt="AirPods original vs fake">
+                    <p>✔ Original: LED tenue y caja con sello<br>✘ Falso: luz brillante y logotipo borroso</p>
+                    <img src="https://i.imgur.com/3W0Vjkl.jpg" alt="AirPods comparación">
                 </div>
             </div>
         </section>

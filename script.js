@@ -1,3 +1,4 @@
+
 function mostrarImagen(input, previewId) {
     const file = input.files[0];
     const reader = new FileReader();
@@ -33,4 +34,17 @@ function toggleLanguage() {
     document.getElementById('title').textContent = t.title;
     document.getElementById('subtitle').textContent = t.subtitle;
     document.getElementById('imgCompareTitle').textContent = t.imgCompareTitle;
+}
+
+function filtrarTarjetas() {
+    const filtro = document.getElementById("filtroCategoria").value;
+    const tarjetas = document.querySelectorAll(".tarjeta");
+
+    tarjetas.forEach(t => {
+        if (filtro === "todas" || t.classList.contains(filtro)) {
+            t.style.display = "block";
+        } else {
+            t.style.display = "none";
+        }
+    });
 }
