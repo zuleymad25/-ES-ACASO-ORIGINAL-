@@ -1,35 +1,31 @@
 
 body {
-    font-family: 'Segoe UI', sans-serif;
-    margin: 0;
-    background: #f5f5f5;
-    color: #111;
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  background: #f5f5f5;
+  color: #111;
 }
 .franja {
-    background-color: #fff;
-    padding: 2rem;
-    border-bottom: 2px solid #ccc;
+  background-color: #fff;
+  padding: 2rem;
+  border-bottom: 2px solid #ccc;
 }
 .franja-negra {
-    background-color: #000;
-    color: white;
-    padding: 1rem 2rem;
-    text-align: center;
+  background-color: #000;
+  color: white;
+  padding: 1rem 2rem;
+  text-align: center;
 }
-header nav {
-    margin-top: 1rem;
+footer {
+  text-align: center;
 }
-section ul {
-    list-style: none;
-    padding-left: 0;
+.marcas img {
+  width: 200px;
+  margin: 1rem;
 }
-a {
-    color: #0077cc;
-    text-decoration: none;
+.marca {
+  display: none;
 }
-a:hover {
-    text-decoration: underline;
-}
-details summary {
-    cursor: pointer;
+.marca.visible {
+  display: block;
 }
