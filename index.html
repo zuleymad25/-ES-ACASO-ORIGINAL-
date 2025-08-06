@@ -2,90 +2,67 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>¿Es Acaso Original?</title>
-  <link rel="stylesheet" href="style.css" />
-  <script defer src="script.js"></script>
-  <style>
-    .lang-selector {
-      text-align: right;
-      padding: 1rem;
-      background-color: #fff;
-    }
-    .lang-selector select {
-      padding: 0.5rem;
-      font-size: 1rem;
-    }
-    .footer {
-      text-align: center;
-      padding: 2rem;
-      background-color: #f2f2f2;
-    }
-    .footer a {
-      color: #0077cc;
-      font-weight: bold;
-      text-decoration: none;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <title>¿Es Acaso Original?</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="lang-selector">
-    <label for="language">🌐 Idioma / Language / Langue:</label>
-    <select id="language" onchange="changeLanguage(this.value)">
-      <option value="es">Español</option>
-      <option value="en">English</option>
-      <option value="fr">Français</option>
-    </select>
-  </div>
+<header>
+    <h1>¿Es Acaso Original?</h1>
+    <nav>
+        <select id="languageSelector">
+            <option value="es">Español</option>
+            <option value="en">English</option>
+            <option value="fr">Français</option>
+        </select>
+    </nav>
+</header>
 
-  <header>
-    <h1 data-es="¿Es Acaso Original?" data-en="Is It Even Original?" data-fr="Est-ce vraiment original?">¿Es Acaso Original?</h1>
-    <p data-es="Identifica productos falsos con ejemplos y consejos"
-       data-en="Identify fake products with examples and tips"
-       data-fr="Identifiez les produits contrefaits avec des exemples et des conseils">
-       Identifica productos falsos con ejemplos y consejos
-    </p>
-  </header>
+<main>
+    <!-- Sección 1: Novedades -->
+    <section id="novedades">
+        <h2 data-i18n="news">Novedades y Alertas</h2>
+        <ul>
+            <li>🔍 Detectadas zapatillas Nike falsas con etiquetas mal impresas (Julio 2025)</li>
+            <li>⚠️ Réplicas de Gucci con herrajes plásticos detectadas en tiendas no oficiales</li>
+        </ul>
+    </section>
 
-  <main>
-    <div class="brand-card">
-      <h2 data-es="Nike" data-en="Nike" data-fr="Nike">Nike</h2>
-      <p data-es="Consejos para identificar productos originales: revisa costuras, logotipos y materiales. El logo debe ser limpio, sin bordes deshilachados. La textura del material original es más uniforme."
-         data-en="Tips to identify authentic products: check stitching, logos, and materials. The logo should be clean, without frayed edges. The texture of genuine material is more uniform."
-         data-fr="Conseils pour identifier les produits authentiques : vérifiez les coutures, les logos et les matériaux. Le logo doit être net, sans bords effilochés. La texture du matériau original est plus uniforme.">
-         Consejos para identificar productos originales: revisa costuras, logotipos y materiales. El logo debe ser limpio, sin bordes deshilachados. La textura del material original es más uniforme.
-      </p>
-    </div>
+    <!-- Sección 2: FAQ -->
+    <section id="faq">
+        <h2 data-i18n="faq">Preguntas Frecuentes</h2>
+        <details><summary>¿Qué hago si compré algo falso?</summary><p>Reúne pruebas, contacta al vendedor y denuncia si es posible.</p></details>
+        <details><summary>¿Cuál es la diferencia entre réplica y original?</summary><p>El producto original es fabricado por la marca. La réplica es una imitación, muchas veces ilegal.</p></details>
+        <details><summary>¿Cómo saber si una tienda es confiable?</summary><p>Compra solo en tiendas oficiales o autorizadas por la marca.</p></details>
+    </section>
 
-    <div class="brand-card">
-      <h2 data-es="Adidas" data-en="Adidas" data-fr="Adidas">Adidas</h2>
-      <p data-es="Verifica que el logo tenga el espaciado correcto. Las imitaciones suelen tener costuras más gruesas y mal alineadas. El código del producto debe coincidir con el de la caja."
-         data-en="Make sure the logo spacing is correct. Fakes often have thicker, misaligned stitching. The product code should match the one on the box."
-         data-fr="Assurez-vous que l'espacement du logo est correct. Les contrefaçons ont souvent des coutures plus épaisses et mal alignées. Le code du produit doit correspondre à celui de la boîte.">
-         Verifica que el logo tenga el espaciado correcto. Las imitaciones suelen tener costuras más gruesas y mal alineadas. El código del producto debe coincidir con el de la caja.
-      </p>
-    </div>
-  </main>
+    <!-- Sección 3: Testimonios -->
+    <section id="testimonios">
+        <h2 data-i18n="testimonials">Testimonios</h2>
+        <blockquote>“Pensé que mis Adidas eran originales, pero esta página me ayudó a notar la diferencia. ¡Gracias!” – Ana, CDMX</blockquote>
+        <blockquote>“Subí una foto y me di cuenta que el logo estaba mal. Me salvé de una compra falsa.” – Luis, Bogotá</blockquote>
+    </section>
 
-  <div class="footer">
-    <p data-es="¿Tuviste una experiencia con un producto falso?"
-       data-en="Did you have an experience with a fake product?"
-       data-fr="Avez-vous eu une expérience avec un produit contrefait ?">
-       ¿Tuviste una experiencia con un producto falso?
-    </p>
-    <a href="https://docs.google.com/forms/d/e/1FAIpQLSfmIjYqGmB73yA7VQB_m4mRmUXLJJR719H86WQX4tLkcFjmQw/viewform" target="_blank"
-       data-es="Contesta esta encuesta"
-       data-en="Answer this survey"
-       data-fr="Répondez à ce sondage">Contesta esta encuesta</a>
-  </div>
+    <!-- Sección 4: Tiendas Oficiales -->
+    <section id="tiendas">
+        <h2 data-i18n="official_stores">Tiendas Oficiales</h2>
+        <ul>
+            <li><a href="https://www.nike.com" target="_blank">Nike Oficial</a></li>
+            <li><a href="https://www.adidas.com" target="_blank">Adidas Oficial</a></li>
+            <li><a href="https://www.gucci.com" target="_blank">Gucci Oficial</a></li>
+        </ul>
+    </section>
 
-  <script>
-    function changeLanguage(lang) {
-      document.querySelectorAll("[data-" + lang + "]").forEach(el => {
-        el.innerText = el.getAttribute("data-" + lang);
-      });
-    }
-  </script>
+    <!-- Encuesta -->
+    <section id="encuesta">
+        <h2 data-i18n="survey">¿Tuviste una experiencia con un producto falso?</h2>
+        <p>
+            👉 <a href="https://docs.google.com/forms/d/e/1FAIpQLSfmIjYqGmB73yA7VQB_m4mRmUXLJJR719H86WQX4tLkcFjmQw/viewform" 
+            target="_blank">Contesta esta encuesta</a>
+        </p>
+    </section>
+</main>
+
+<script src="script.js"></script>
 </body>
 </html>
