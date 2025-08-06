@@ -1,92 +1,91 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title id="t_title">¿Es Acaso Original?</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>¿Es Acaso Original?</title>
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="script.js"></script>
+  <style>
+    .lang-selector {
+      text-align: right;
+      padding: 1rem;
+      background-color: #fff;
+    }
+    .lang-selector select {
+      padding: 0.5rem;
+      font-size: 1rem;
+    }
+    .footer {
+      text-align: center;
+      padding: 2rem;
+      background-color: #f2f2f2;
+    }
+    .footer a {
+      color: #0077cc;
+      font-weight: bold;
+      text-decoration: none;
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <h1 id="t_main_title">¿Es Acaso Original?</h1>
-        <p id="t_subtitle">Aprende a identificar productos originales comparándolos con falsificaciones.</p>
-        <button onclick="toggleLanguage()">ES / EN</button>
-    </header>
+  <div class="lang-selector">
+    <label for="language">🌐 Idioma / Language / Langue:</label>
+    <select id="language" onchange="changeLanguage(this.value)">
+      <option value="es">Español</option>
+      <option value="en">English</option>
+      <option value="fr">Français</option>
+    </select>
+  </div>
 
-    <main>
-        <section>
-            <h2 id="t_compare_title">Comparar Imágenes</h2>
-            <div class="slider-comparacion">
-                <input type="file" accept="image/*" onchange="loadImage(event, 'img1')">
-                <input type="file" accept="image/*" onchange="loadImage(event, 'img2')">
-                <div class="slider-container">
-                    <div class="img-wrapper">
-                        <img id="img1" src="" alt="Original">
-                        <div class="slider-bar">
-                            <div class="handle"></div>
-                        </div>
-                        <img id="img2" src="" alt="Falso">
-                    </div>
-                </div>
-            </div>
-            <div class="tips">
-                <h3 id="t_tips">Consejos para comparar:</h3>
-                <ul>
-                    <li>🧵 Costuras: limpias y parejas vs torcidas</li>
-                    <li>🎨 Colores: tonos consistentes vs deslavados</li>
-                    <li>🔍 Logotipos: simétricos y bien alineados</li>
-                    <li>📦 Empaque: materiales y sellos auténticos</li>
-                </ul>
-            </div>
-        </section>
+  <header>
+    <h1 data-es="¿Es Acaso Original?" data-en="Is It Even Original?" data-fr="Est-ce vraiment original?">¿Es Acaso Original?</h1>
+    <p data-es="Identifica productos falsos con ejemplos y consejos"
+       data-en="Identify fake products with examples and tips"
+       data-fr="Identifiez les produits contrefaits avec des exemples et des conseils">
+       Identifica productos falsos con ejemplos y consejos
+    </p>
+  </header>
 
-        <section>
-            <h2 id="t_filter">Filtrar y Buscar</h2>
-            <input type="text" id="searchInput" placeholder="Buscar marca o producto..." onkeyup="filtrarTarjetas()">
-            <select id="filtroCategoria" onchange="filtrarTarjetas()">
-                <option value="todas">Todas</option>
-                <option value="ropa">Ropa</option>
-                <option value="electronicos">Electrónicos</option>
-                <option value="lujo">Lujo</option>
-            </select>
-        </section>
+  <main>
+    <div class="brand-card">
+      <h2 data-es="Nike" data-en="Nike" data-fr="Nike">Nike</h2>
+      <p data-es="Consejos para identificar productos originales: revisa costuras, logotipos y materiales. El logo debe ser limpio, sin bordes deshilachados. La textura del material original es más uniforme."
+         data-en="Tips to identify authentic products: check stitching, logos, and materials. The logo should be clean, without frayed edges. The texture of genuine material is more uniform."
+         data-fr="Conseils pour identifier les produits authentiques : vérifiez les coutures, les logos et les matériaux. Le logo doit être net, sans bords effilochés. La texture du matériau original est plus uniforme.">
+         Consejos para identificar productos originales: revisa costuras, logotipos y materiales. El logo debe ser limpio, sin bordes deshilachados. La textura del material original es más uniforme.
+      </p>
+    </div>
 
-        <section class="marcas">
-            <h2 id="t_examples">Ejemplos por Marca</h2>
-            <div class="tarjetas-marcas">
-                <div class="tarjeta ropa" data-nombre="Nike">
-                    <h3>Nike</h3>
-                    <p>✔ Original: costuras firmes<br>✘ Falso: logotipo descentrado</p>
-                </div>
-                <div class="tarjeta lujo" data-nombre="Louis Vuitton">
-                    <h3>Louis Vuitton</h3>
-                    <p>✔ Original: patrón alineado<br>✘ Falso: colores apagados</p>
-                </div>
-                <div class="tarjeta electronicos" data-nombre="Apple AirPods">
-                    <h3>Apple AirPods</h3>
-                    <p>✔ Original: LED tenue<br>✘ Falso: luz brillante</p>
-                </div>
-            </div>
-        </section>
+    <div class="brand-card">
+      <h2 data-es="Adidas" data-en="Adidas" data-fr="Adidas">Adidas</h2>
+      <p data-es="Verifica que el logo tenga el espaciado correcto. Las imitaciones suelen tener costuras más gruesas y mal alineadas. El código del producto debe coincidir con el de la caja."
+         data-en="Make sure the logo spacing is correct. Fakes often have thicker, misaligned stitching. The product code should match the one on the box."
+         data-fr="Assurez-vous que l'espacement du logo est correct. Les contrefaçons ont souvent des coutures plus épaisses et mal alignées. Le code du produit doit correspondre à celui de la boîte.">
+         Verifica que el logo tenga el espaciado correcto. Las imitaciones suelen tener costuras más gruesas y mal alineadas. El código del producto debe coincidir con el de la caja.
+      </p>
+    </div>
+  </main>
 
-        <section>
-            <h2 id="t_share">¿Te tocó un producto fake?</h2>
-            <form>
-                <label id="t_brand">Marca:</label><br>
-                <input type="text" name="marca" required><br>
-                <label id="t_desc">Descripción / experiencia:</label><br>
-                <textarea name="descripcion" rows="4" required></textarea><br>
-                <label id="t_upload">Subir foto (opcional):</label><br>
-                <input type="file" name="imagen" accept="image/*"><br><br>
-                <button type="submit" id="t_submit">Enviar</button>
-            </form>
-        </section>
-    </main>
+  <div class="footer">
+    <p data-es="¿Tuviste una experiencia con un producto falso?"
+       data-en="Did you have an experience with a fake product?"
+       data-fr="Avez-vous eu une expérience avec un produit contrefait ?">
+       ¿Tuviste una experiencia con un producto falso?
+    </p>
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSfmIjYqGmB73yA7VQB_m4mRmUXLJJR719H86WQX4tLkcFjmQw/viewform" target="_blank"
+       data-es="Contesta esta encuesta"
+       data-en="Answer this survey"
+       data-fr="Répondez à ce sondage">Contesta esta encuesta</a>
+  </div>
 
-    <footer>
-        <p id="t_footer">¿Es Acaso Original? © 2025 - Todos los derechos reservados.</p>
-    </footer>
-
-    <script src="script.js"></script>
+  <script>
+    function changeLanguage(lang) {
+      document.querySelectorAll("[data-" + lang + "]").forEach(el => {
+        el.innerText = el.getAttribute("data-" + lang);
+      });
+    }
+  </script>
 </body>
 </html>
