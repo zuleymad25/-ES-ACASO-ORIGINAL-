@@ -7,15 +7,15 @@
 <title id="t_title">¿Es Acaso Original?</title>
 <link href="style.css" rel="stylesheet"/>
 </head>
-<body>
+<body><div id="language-switch" style="position:fixed;top:10px;right:10px;z-index:999;"><button onclick="changeLanguage('es')">ES</button> <button onclick="changeLanguage('en')">EN</button> <button onclick="changeLanguage('fr')">FR</button></div>
 <header>
-<h1 id="t_main_title">¿Es Acaso Original?</h1>
-<p id="t_subtitle">Aprende a identificar productos originales comparándolos con falsificaciones.</p>
-<button onclick="toggleLanguage()">ES / EN</button>
+<h1 data-i18n="¿es_acaso_original?" id="t_main_title">¿Es Acaso Original?</h1>
+<p data-i18n="aprende_a_identificar_productos_originales_compará" id="t_subtitle">Aprende a identificar productos originales comparándolos con falsificaciones.</p>
+<button data-i18n="es_/_en" onclick="toggleLanguage()">ES / EN</button>
 </header>
 <main>
 <section>
-<h2 id="t_compare_title">Comparar Imágenes</h2>
+<h2 data-i18n="comparar_imágenes" id="t_compare_title">Comparar Imágenes</h2>
 <div class="slider-comparacion">
 <input accept="image/*" onchange="loadImage(event, 'img1')" type="file"/>
 <input accept="image/*" onchange="loadImage(event, 'img2')" type="file"/>
@@ -30,17 +30,17 @@
 </div>
 </div>
 <div class="tips">
-<h3 id="t_tips">Consejos para comparar:</h3>
+<h3 data-i18n="consejos_para_comparar:" id="t_tips">Consejos para comparar:</h3>
 <ul>
-<li>🧵 Costuras: limpias y parejas vs torcidas</li>
-<li>🎨 Colores: tonos consistentes vs deslavados</li>
-<li>🔍 Logotipos: simétricos y bien alineados</li>
-<li>📦 Empaque: materiales y sellos auténticos</li>
+<li data-i18n="🧵_costuras:_limpias_y_parejas_vs_torcidas">🧵 Costuras: limpias y parejas vs torcidas</li>
+<li data-i18n="🎨_colores:_tonos_consistentes_vs_deslavados">🎨 Colores: tonos consistentes vs deslavados</li>
+<li data-i18n="🔍_logotipos:_simétricos_y_bien_alineados">🔍 Logotipos: simétricos y bien alineados</li>
+<li data-i18n="📦_empaque:_materiales_y_sellos_auténticos">📦 Empaque: materiales y sellos auténticos</li>
 </ul>
 </div>
 </section>
 <section>
-<h2 id="t_filter">Filtrar y Buscar</h2>
+<h2 data-i18n="filtrar_y_buscar" id="t_filter">Filtrar y Buscar</h2>
 <input id="searchInput" onkeyup="filtrarTarjetas()" placeholder="Buscar marca o producto..." type="text"/>
 <select id="filtroCategoria" onchange="filtrarTarjetas()">
 <option value="todas">Todas</option>
@@ -50,18 +50,18 @@
 </select>
 </section>
 <section class="marcas">
-<h2 id="t_examples">Ejemplos por Marca</h2>
+<h2 data-i18n="ejemplos_por_marca" id="t_examples">Ejemplos por Marca</h2>
 <div class="tarjetas-marcas">
 <div class="tarjeta ropa" data-nombre="Nike">
-<h3>Nike</h3>
+<h3 data-i18n="nike">Nike</h3>
 <p>✔ Original: costuras firmes<br/>✘ Falso: logotipo descentrado</p>
 </div>
 <div class="tarjeta lujo" data-nombre="Louis Vuitton">
-<h3>Louis Vuitton</h3>
+<h3 data-i18n="louis_vuitton">Louis Vuitton</h3>
 <p>✔ Original: patrón alineado<br/>✘ Falso: colores apagados</p>
 </div>
 <div class="tarjeta electronicos" data-nombre="Apple AirPods">
-<h3>Apple AirPods</h3>
+<h3 data-i18n="apple_airpods">Apple AirPods</h3>
 <p>✔ Original: LED tenue<br/>✘ Falso: luz brillante</p>
 </div>
 </div>
@@ -69,19 +69,17 @@
 <section>
 <h2 id="t_share"></h2>
 <form>
-<label id="t_brand">Marca:</label><br/>
+<label data-i18n="marca:" id="t_brand">Marca:</label><br/>
 <input name="marca" required="" type="text"/><br/>
-<label id="t_desc">Descripción / experiencia:</label><br/>
+<label data-i18n="descripción_/_experiencia:" id="t_desc">Descripción / experiencia:</label><br/>
 <textarea name="descripcion" required="" rows="4"></textarea><br/>
-<label id="t_upload">Subir foto (opcional):</label><br/>
+<label data-i18n="subir_foto_(opcional):" id="t_upload">Subir foto (opcional):</label><br/>
 <input accept="image/*" name="imagen" type="file"/><br/><br/>
-<button id="t_submit" type="submit">Enviar</button>
+<button data-i18n="enviar" id="t_submit" type="submit">Enviar</button>
 </form>
 </section>
 <!-- Enlaces a marcas -->
-
 <!-- Preguntas Frecuentes -->
-
 <!-- Testimonios -->
 <!-- Encuesta -->
 <!-- Apartado restaurado -->
@@ -93,9 +91,9 @@
 <section class="franja">
 <h2 data-i18n="brand_links">Explora Marcas</h2>
 <ul>
-<li><a href="https://www.nike.com" target="_blank">Nike</a></li>
-<li><a href="https://www.adidas.com" target="_blank">Adidas</a></li>
-<li><a href="https://www.gucci.com" target="_blank">Gucci</a></li>
+<li data-i18n="nike"><a data-i18n="nike" href="https://www.nike.com" target="_blank">Nike</a></li>
+<li data-i18n="adidas"><a data-i18n="adidas" href="https://www.adidas.com" target="_blank">Adidas</a></li>
+<li data-i18n="gucci"><a data-i18n="gucci" href="https://www.gucci.com" target="_blank">Gucci</a></li>
 </ul>
 </section>
 <!-- Preguntas Frecuentes -->
@@ -119,12 +117,46 @@
 <!-- Encuesta -->
 <section class="franja">
 <h2 data-i18n="survey">¿Tuviste una experiencia con un producto falso?</h2>
-<p><a data-i18n="survey_link" href="https://docs.google.com/forms/d/e/1FAIpQLSfmIjYqGmB73yA7VQB_m4mRmUXLJJR719H86WQX4tLkcFjmQw/viewform" target="_blank">Haz clic aquí para contestar la encuesta</a></p>
+<p data-i18n="haz_clic_aquí_para_contestar_la_encuesta"><a data-i18n="survey_link" href="https://docs.google.com/forms/d/e/1FAIpQLSfmIjYqGmB73yA7VQB_m4mRmUXLJJR719H86WQX4tLkcFjmQw/viewform" target="_blank">Haz clic aquí para contestar la encuesta</a></p>
 </section>
 </main>
 <footer>
-<p id="t_footer">¿Es Acaso Original? © 2025 - Todos los derechos reservados.</p>
+<p data-i18n="¿es_acaso_original?_©_2025_-_todos_los_derechos_re" id="t_footer">¿Es Acaso Original? © 2025 - Todos los derechos reservados.</p>
 </footer>
 <script src="script.js"></script>
-</body>
+<script>
+function changeLanguage(lang) {
+    const translations = {
+        "en": {
+            "¿es_acaso_original?": "Is It Even Original?",
+            "explora_marcas": "Explore Brands",
+            "preguntas_frecuentes": "Frequently Asked Questions",
+            "testimonios": "Testimonials",
+            "sube_una_imagen_para_comparar": "Upload an image to compare",
+            "consejos_para_identificar_productos_falsos": "Tips to identify fake products",
+            "tiendas_oficiales_por_marca": "Official stores by brand",
+            "encuesta": "Survey",
+            "responde_nuestra_encuesta": "Answer our survey"
+        },
+        "fr": {
+            "¿es_acaso_original?": "Est-ce vraiment original ?",
+            "explora_marcas": "Explorer les marques",
+            "preguntas_frecuentes": "Questions fréquentes",
+            "testimonios": "Témoignages",
+            "sube_una_imagen_para_comparar": "Télécharger une image à comparer",
+            "consejos_para_identificar_productos_falsos": "Conseils pour identifier les produits contrefaits",
+            "tiendas_oficiales_por_marca": "Magasins officiels par marque",
+            "encuesta": "Enquête",
+            "responde_nuestra_encuesta": "Répondez à notre enquête"
+        }
+    };
+    document.querySelectorAll("[data-i18n]").forEach(el => {
+        const key = el.getAttribute("data-i18n");
+        const translation = translations[lang] && translations[lang][key];
+        if (translation) {
+            el.textContent = translation;
+        }
+    });
+}
+</script></body>
 </html>
