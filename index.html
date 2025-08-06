@@ -1,84 +1,130 @@
-
 <!DOCTYPE html>
+
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <title>¿Es Acaso Original?</title>
-  <link rel="stylesheet" href="style.css" />
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title id="t_title">¿Es Acaso Original?</title>
+<link href="style.css" rel="stylesheet"/>
 </head>
 <body>
-<header class="franja-negra">
-  <h1 data-i18n="main_title">¿Es Acaso Original?</h1>
-  <nav>
-    <select id="languageSelector">
-      <option value="es">Español</option>
-      <option value="en">English</option>
-      <option value="fr">Français</option>
-    </select>
-  </nav>
+<header>
+<h1 id="t_main_title">¿Es Acaso Original?</h1>
+<p id="t_subtitle">Aprende a identificar productos originales comparándolos con falsificaciones.</p>
+<button onclick="toggleLanguage()">ES / EN</button>
 </header>
-
 <main>
-  <!-- Sección de comparación por imagen -->
-  <section class="franja">
-    <h2 data-i18n="compare_photos">Compara tus fotos</h2>
-    <p data-i18n="upload_instruction">Sube imágenes del producto para recibir consejos:</p>
-    <input type="file" multiple id="upload" />
-    <div id="preview"></div>
-  </section>
+<section>
+<h2 id="t_compare_title">Comparar Imágenes</h2>
+<div class="slider-comparacion">
+<input accept="image/*" onchange="loadImage(event, 'img1')" type="file"/>
+<input accept="image/*" onchange="loadImage(event, 'img2')" type="file"/>
+<div class="slider-container">
+<div class="img-wrapper">
+<img alt="Original" id="img1" src=""/>
+<div class="slider-bar">
+<div class="handle"></div>
+</div>
+<img alt="Falso" id="img2" src=""/>
+</div>
+</div>
+</div>
+<div class="tips">
+<h3 id="t_tips">Consejos para comparar:</h3>
+<ul>
+<li>🧵 Costuras: limpias y parejas vs torcidas</li>
+<li>🎨 Colores: tonos consistentes vs deslavados</li>
+<li>🔍 Logotipos: simétricos y bien alineados</li>
+<li>📦 Empaque: materiales y sellos auténticos</li>
+</ul>
+</div>
+</section>
+<section>
+<h2 id="t_filter">Filtrar y Buscar</h2>
+<input id="searchInput" onkeyup="filtrarTarjetas()" placeholder="Buscar marca o producto..." type="text"/>
+<select id="filtroCategoria" onchange="filtrarTarjetas()">
+<option value="todas">Todas</option>
+<option value="ropa">Ropa</option>
+<option value="electronicos">Electrónicos</option>
+<option value="lujo">Lujo</option>
+</select>
+</section>
+<section class="marcas">
+<h2 id="t_examples">Ejemplos por Marca</h2>
+<div class="tarjetas-marcas">
+<div class="tarjeta ropa" data-nombre="Nike">
+<h3>Nike</h3>
+<p>✔ Original: costuras firmes<br/>✘ Falso: logotipo descentrado</p>
+</div>
+<div class="tarjeta lujo" data-nombre="Louis Vuitton">
+<h3>Louis Vuitton</h3>
+<p>✔ Original: patrón alineado<br/>✘ Falso: colores apagados</p>
+</div>
+<div class="tarjeta electronicos" data-nombre="Apple AirPods">
+<h3>Apple AirPods</h3>
+<p>✔ Original: LED tenue<br/>✘ Falso: luz brillante</p>
+</div>
+</div>
+</section>
+<section>
+<h2 id="t_share"></h2>
+<form>
+<label id="t_brand">Marca:</label><br/>
+<input name="marca" required="" type="text"/><br/>
+<label id="t_desc">Descripción / experiencia:</label><br/>
+<textarea name="descripcion" required="" rows="4"></textarea><br/>
+<label id="t_upload">Subir foto (opcional):</label><br/>
+<input accept="image/*" name="imagen" type="file"/><br/><br/>
+<button id="t_submit" type="submit">Enviar</button>
+</form>
+</section>
+<!-- Enlaces a marcas -->
 
-  <!-- Filtro por marca -->
-  <section class="franja">
-    <h2 data-i18n="brand_filter">Filtrar por marca</h2>
-    <select id="brandFilter">
-      <option value="all" data-i18n="all_brands">Todas las marcas</option>
-      <option value="nike">Nike</option>
-      <option value="adidas">Adidas</option>
-      <option value="gucci">Gucci</option>
-    </select>
-  </section>
+<!-- Preguntas Frecuentes -->
 
-  <!-- Enlaces a marcas -->
-  <section class="franja">
-    <h2 data-i18n="brand_links">Explora Marcas</h2>
-    <ul>
-      <li><a href="#" data-i18n="nike">Nike</a></li>
-      <li><a href="#" data-i18n="adidas">Adidas</a></li>
-      <li><a href="#" data-i18n="gucci">Gucci</a></li>
-    </ul>
-  </section>
-
-  <!-- Encuesta -->
-  <section class="franja">
-    <h2 data-i18n="survey">¿Tuviste una experiencia con un producto falso?</h2>
-    <p><a href="https://docs.google.com/forms/d/e/1FAIpQLSfmIjYqGmB73yA7VQB_m4mRmUXLJJR719H86WQX4tLkcFjmQw/viewform" target="_blank" data-i18n="survey_link">Haz clic aquí para contestar la encuesta</a></p>
-  </section>
-
-  <!-- Sección de Preguntas Frecuentes -->
-  <section class="franja">
-    <h2 data-i18n="faq_title">Preguntas Frecuentes</h2>
-    <ul>
-      <li><strong data-i18n="faq_1_q">¿Cómo puedo saber si algo es falso?</strong><br>
-        <span data-i18n="faq_1_a">Observa detalles como logotipos, costuras y materiales. Usa la herramienta de comparación de imágenes.</span>
-      </li>
-      <li><strong data-i18n="faq_2_q">¿Qué hago si compré una imitación sin saber?</strong><br>
-        <span data-i18n="faq_2_a">Contacta con el vendedor y revisa si puedes solicitar reembolso. Reporta el producto si es necesario.</span>
-      </li>
-    </ul>
-  </section>
-
-  <!-- Sección de Testimonios -->
-  <section class="franja">
-    <h2 data-i18n="testimonials_title">Testimonios</h2>
-    <blockquote data-i18n="testimonial_1">“Gracias a esta página pude darme cuenta de que mis tenis no eran originales. Me ayudaron mucho los tips visuales.” – Ana</blockquote>
-    <blockquote data-i18n="testimonial_2">“Comparé mis fotos y vi que el logo no coincidía. Muy útil y fácil de usar.” – Luis</blockquote>
-  </section>
+<!-- Testimonios -->
+<!-- Encuesta -->
+<!-- Apartado restaurado -->
+<section class="franja">
+<h2 data-i18n="product_fake_question">¿Te tocó un producto fake?</h2>
+<p data-i18n="product_fake_tip">No te preocupes, aquí puedes aprender a identificar productos falsos y evitar que vuelva a pasar. Comparte tu experiencia en la encuesta y revisa nuestros consejos.</p>
+</section>
+<!-- Enlaces a marcas con links oficiales -->
+<section class="franja">
+<h2 data-i18n="brand_links">Explora Marcas</h2>
+<ul>
+<li><a href="https://www.nike.com" target="_blank">Nike</a></li>
+<li><a href="https://www.adidas.com" target="_blank">Adidas</a></li>
+<li><a href="https://www.gucci.com" target="_blank">Gucci</a></li>
+</ul>
+</section>
+<!-- Preguntas Frecuentes -->
+<section class="franja">
+<h2 data-i18n="faq_title">Preguntas Frecuentes</h2>
+<ul>
+<li><strong data-i18n="faq_1_q">¿Cómo puedo saber si algo es falso?</strong><br/>
+<span data-i18n="faq_1_a">Observa detalles como logotipos, costuras y materiales. Usa la herramienta de comparación de imágenes.</span>
+</li>
+<li><strong data-i18n="faq_2_q">¿Qué hago si compré una imitación sin saber?</strong><br/>
+<span data-i18n="faq_2_a">Contacta con el vendedor y revisa si puedes solicitar reembolso. Reporta el producto si es necesario.</span>
+</li>
+</ul>
+</section>
+<!-- Testimonios -->
+<section class="franja">
+<h2 data-i18n="testimonials_title">Testimonios</h2>
+<blockquote data-i18n="testimonial_1">“Gracias a esta página pude darme cuenta de que mis tenis no eran originales. Me ayudaron mucho los tips visuales.” – Ana</blockquote>
+<blockquote data-i18n="testimonial_2">“Comparé mis fotos y vi que el logo no coincidía. Muy útil y fácil de usar.” – Luis</blockquote>
+</section>
+<!-- Encuesta -->
+<section class="franja">
+<h2 data-i18n="survey">¿Tuviste una experiencia con un producto falso?</h2>
+<p><a data-i18n="survey_link" href="https://docs.google.com/forms/d/e/1FAIpQLSfmIjYqGmB73yA7VQB_m4mRmUXLJJR719H86WQX4tLkcFjmQw/viewform" target="_blank">Haz clic aquí para contestar la encuesta</a></p>
+</section>
 </main>
-
-<footer class="franja-negra">
-  <p>© 2025 ¿Es Acaso Original?</p>
+<footer>
+<p id="t_footer">¿Es Acaso Original? © 2025 - Todos los derechos reservados.</p>
 </footer>
-
 <script src="script.js"></script>
 </body>
 </html>

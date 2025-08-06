@@ -1,66 +1,65 @@
 
-const translations = {
-  en: {
-    main_title: "Is It Original?",
-    compare_photos: "Compare your photos",
-    upload_instruction: "Upload images of the product to get tips:",
-    brand_filter: "Filter by brand",
-    all_brands: "All brands",
-    brand_examples: "Brand Examples",
-    nike_tip: "Tip: Check that the logo is well aligned and the sole has defined texture.",
-    adidas_tip: "Tip: The original logo is cleanly and symmetrically embroidered.",
-    gucci_tip: "Tip: Original metal finishes are heavy and well-defined.",
-    survey: "Had an experience with a fake product?",
-    survey_link: "Click here to answer the survey"
-  },
-  fr: {
-    main_title: "Est-ce Original ?",
-    compare_photos: "Comparez vos photos",
-    upload_instruction: "Téléchargez des images du produit pour obtenir des conseils :",
-    brand_filter: "Filtrer par marque",
-    all_brands: "Toutes les marques",
-    brand_examples: "Exemples par marque",
-    nike_tip: "Conseil : Vérifiez que le logo est bien aligné et que la semelle a une texture définie.",
-    adidas_tip: "Conseil : Le logo original est brodé proprement et symétriquement.",
-    gucci_tip: "Conseil : Les finitions métalliques originales sont lourdes et bien définies.",
-    survey: "Vous avez eu une expérience avec un faux produit ?",
-    survey_link: "Cliquez ici pour répondre au sondage"
-  }
-};
+function toggleLanguage() {
+    const lang = document.documentElement.lang === 'es' ? 'en' : 'es';
+    document.documentElement.lang = lang;
 
-document.getElementById("languageSelector").addEventListener("change", function() {
-  const lang = this.value;
-  document.querySelectorAll("[data-i18n]").forEach(el => {
-    const key = el.getAttribute("data-i18n");
-    if (translations[lang] && translations[lang][key]) {
-      el.textContent = translations[lang][key];
-    }
-  });
-});
-
-document.getElementById("brandFilter").addEventListener("change", function () {
-  const selected = this.value;
-  document.querySelectorAll(".marca").forEach(m => {
-    m.classList.remove("visible");
-    if (selected === "all" || m.dataset.marca === selected) {
-      m.classList.add("visible");
-    }
-  });
-});
-document.getElementById("brandFilter").dispatchEvent(new Event("change"));
-
-document.getElementById("upload").addEventListener("change", function () {
-  const preview = document.getElementById("preview");
-  preview.innerHTML = "";
-  Array.from(this.files).forEach(file => {
-    const reader = new FileReader();
-    reader.onload = function (e) {
-      const img = document.createElement("img");
-      img.src = e.target.result;
-      img.style.maxWidth = "200px";
-      img.style.margin = "10px";
-      preview.appendChild(img);
+    const textos = {
+        es: {
+            t_title: "¿Es Acaso Original?",
+            t_main_title: "¿Es Acaso Original?",
+            t_subtitle: "Aprende a identificar productos originales comparándolos con falsificaciones.",
+            t_compare_title: "Comparar Imágenes",
+            t_tips: "Consejos para comparar:",
+            t_filter: "Filtrar y Buscar",
+            t_examples: "Ejemplos por Marca",
+            t_share: "¿Te tocó un producto fake?",
+            t_brand: "Marca:",
+            t_desc: "Descripción / experiencia:",
+            t_upload: "Subir foto (opcional):",
+            t_submit: "Enviar",
+            t_footer: "¿Es Acaso Original? © 2025 - Todos los derechos reservados."
+        },
+        en: {
+            t_title: "Is It Original?",
+            t_main_title: "Is It Original?",
+            t_subtitle: "Learn to identify original products by comparing them with fakes.",
+            t_compare_title: "Compare Images",
+            t_tips: "Tips to Compare:",
+            t_filter: "Filter and Search",
+            t_examples: "Brand Examples",
+            t_share: "Did you get a fake product?",
+            t_brand: "Brand:",
+            t_desc: "Description / experience:",
+            t_upload: "Upload image (optional):",
+            t_submit: "Submit",
+            t_footer: "Is It Original? © 2025 - All rights reserved."
+        }
     };
-    reader.readAsDataURL(file);
-  });
-});
+
+    const t = textos[lang];
+    Object.keys(t).forEach(id => {
+        const el = document.getElementById(id);
+        if (el) el.textContent = t[id];
+    });
+}
+
+function loadImage(event, id) {
+    const img = document.getElementById(id);
+    const file = event.target.files[0];
+    const reader = new FileReader();
+    reader.onload = e => img.src = e.target.result;
+    if (file) reader.readAsDataURL(file);
+}
+
+function filtrarTarjetas() {
+    const filtro = document.getElementById("filtroCategoria").value.toLowerCase();
+    const texto = document.getElementById("searchInput").value.toLowerCase();
+    const tarjetas = document.querySelectorAll(".tarjeta");
+
+    tarjetas.forEach(t => {
+        const nombre = t.dataset.nombre.toLowerCase();
+        const coincideTexto = nombre.includes(texto);
+        const coincideCategoria = filtro === "todas" || t.classList.contains(filtro);
+        t.style.display = (coincideTexto && coincideCategoria) ? "block" : "none";
+    });
+}
