@@ -3,45 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>¿Es Acaso Original?</title>
+    <title id="t_title">¿Es Acaso Original?</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
-        <h1 id="title">¿Es Acaso Original?</h1>
-        <p id="subtitle">Aprende a identificar productos originales comparándolos con falsificaciones.</p>
+        <h1 id="t_main_title">¿Es Acaso Original?</h1>
+        <p id="t_subtitle">Aprende a identificar productos originales comparándolos con falsificaciones.</p>
         <button onclick="toggleLanguage()">ES / EN</button>
     </header>
 
     <main>
-        <section class="comparacion-imagenes">
-            <h2 id="imgCompareTitle">Comparar Imágenes</h2>
-            <div class="upload-container">
-                <div>
-                    <label for="imgOriginal">Imagen Original</label>
-                    <input type="file" id="imgOriginal" accept="image/*" onchange="mostrarImagen(this, 'previewOriginal')">
-                    <img id="previewOriginal" src="" alt="Vista previa original">
-                </div>
-                <div>
-                    <label for="imgFake">Imagen Falsa</label>
-                    <input type="file" id="imgFake" accept="image/*" onchange="mostrarImagen(this, 'previewFake')">
-                    <img id="previewFake" src="" alt="Vista previa falsa">
+        <section>
+            <h2 id="t_compare_title">Comparar Imágenes</h2>
+            <div class="slider-comparacion">
+                <input type="file" accept="image/*" onchange="loadImage(event, 'img1')">
+                <input type="file" accept="image/*" onchange="loadImage(event, 'img2')">
+                <div class="slider-container">
+                    <div class="img-wrapper">
+                        <img id="img1" src="" alt="Original">
+                        <div class="slider-bar">
+                            <div class="handle"></div>
+                        </div>
+                        <img id="img2" src="" alt="Falso">
+                    </div>
                 </div>
             </div>
             <div class="tips">
-                <h3>Consejos para comparar:</h3>
+                <h3 id="t_tips">Consejos para comparar:</h3>
                 <ul>
-                    <li>🧵 Observa la calidad y dirección de las costuras</li>
-                    <li>🎨 Compara los colores y el brillo</li>
-                    <li>🔍 Revisa el tamaño y la posición del logotipo</li>
-                    <li>📦 Examina la calidad del empaque</li>
-                    <li>👃 A veces el olor también delata falsificaciones</li>
+                    <li>🧵 Costuras: limpias y parejas vs torcidas</li>
+                    <li>🎨 Colores: tonos consistentes vs deslavados</li>
+                    <li>🔍 Logotipos: simétricos y bien alineados</li>
+                    <li>📦 Empaque: materiales y sellos auténticos</li>
                 </ul>
             </div>
         </section>
 
-        <section class="filtro">
-            <h2>Filtrar por Categoría</h2>
+        <section>
+            <h2 id="t_filter">Filtrar y Buscar</h2>
+            <input type="text" id="searchInput" placeholder="Buscar marca o producto..." onkeyup="filtrarTarjetas()">
             <select id="filtroCategoria" onchange="filtrarTarjetas()">
                 <option value="todas">Todas</option>
                 <option value="ropa">Ropa</option>
@@ -51,29 +52,39 @@
         </section>
 
         <section class="marcas">
-            <h2>Ejemplos por Marca</h2>
+            <h2 id="t_examples">Ejemplos por Marca</h2>
             <div class="tarjetas-marcas">
-                <div class="tarjeta ropa">
+                <div class="tarjeta ropa" data-nombre="Nike">
                     <h3>Nike</h3>
-                    <p>✔ Original: costuras firmes y simétricas<br>✘ Falso: logotipo descentrado</p>
-                    <img src="https://i.imgur.com/BLjMdqI.jpg" alt="Nike comparación">
+                    <p>✔ Original: costuras firmes<br>✘ Falso: logotipo descentrado</p>
                 </div>
-                <div class="tarjeta lujo">
+                <div class="tarjeta lujo" data-nombre="Louis Vuitton">
                     <h3>Louis Vuitton</h3>
-                    <p>✔ Original: patrón alineado y cuero firme<br>✘ Falso: colores deslavados y costuras débiles</p>
-                    <img src="https://i.imgur.com/VzBvKnp.jpg" alt="LV comparación">
+                    <p>✔ Original: patrón alineado<br>✘ Falso: colores apagados</p>
                 </div>
-                <div class="tarjeta electronicos">
+                <div class="tarjeta electronicos" data-nombre="Apple AirPods">
                     <h3>Apple AirPods</h3>
-                    <p>✔ Original: LED tenue y caja con sello<br>✘ Falso: luz brillante y logotipo borroso</p>
-                    <img src="https://i.imgur.com/3W0Vjkl.jpg" alt="AirPods comparación">
+                    <p>✔ Original: LED tenue<br>✘ Falso: luz brillante</p>
                 </div>
             </div>
+        </section>
+
+        <section>
+            <h2 id="t_share">¿Te tocó un producto fake?</h2>
+            <form>
+                <label id="t_brand">Marca:</label><br>
+                <input type="text" name="marca" required><br>
+                <label id="t_desc">Descripción / experiencia:</label><br>
+                <textarea name="descripcion" rows="4" required></textarea><br>
+                <label id="t_upload">Subir foto (opcional):</label><br>
+                <input type="file" name="imagen" accept="image/*"><br><br>
+                <button type="submit" id="t_submit">Enviar</button>
+            </form>
         </section>
     </main>
 
     <footer>
-        <p>¿Es Acaso Original? © 2025 - Todos los derechos reservados.</p>
+        <p id="t_footer">¿Es Acaso Original? © 2025 - Todos los derechos reservados.</p>
     </footer>
 
     <script src="script.js"></script>
