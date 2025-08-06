@@ -2,13 +2,13 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" />
     <title>¿Es Acaso Original?</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-<header>
-    <h1>¿Es Acaso Original?</h1>
+<header class="franja-negra">
+    <h1 data-i18n="main_title">¿Es Acaso Original?</h1>
     <nav>
         <select id="languageSelector">
             <option value="es">Español</option>
@@ -19,49 +19,43 @@
 </header>
 
 <main>
-    <!-- Sección 1: Novedades -->
-    <section id="novedades">
+    <section class="franja">
         <h2 data-i18n="news">Novedades y Alertas</h2>
-        <ul>
-            <li>🔍 Detectadas zapatillas Nike falsas con etiquetas mal impresas (Julio 2025)</li>
-            <li>⚠️ Réplicas de Gucci con herrajes plásticos detectadas en tiendas no oficiales</li>
-        </ul>
+        <p data-i18n="news_1">🔍 Detectadas zapatillas Nike falsas con etiquetas mal impresas (Julio 2025)</p>
+        <p data-i18n="news_2">⚠️ Réplicas de Gucci con herrajes plásticos detectadas en tiendas no oficiales</p>
     </section>
 
-    <!-- Sección 2: FAQ -->
-    <section id="faq">
+    <section class="franja">
         <h2 data-i18n="faq">Preguntas Frecuentes</h2>
-        <details><summary>¿Qué hago si compré algo falso?</summary><p>Reúne pruebas, contacta al vendedor y denuncia si es posible.</p></details>
-        <details><summary>¿Cuál es la diferencia entre réplica y original?</summary><p>El producto original es fabricado por la marca. La réplica es una imitación, muchas veces ilegal.</p></details>
-        <details><summary>¿Cómo saber si una tienda es confiable?</summary><p>Compra solo en tiendas oficiales o autorizadas por la marca.</p></details>
+        <details><summary data-i18n="faq_1_q">¿Qué hago si compré algo falso?</summary><p data-i18n="faq_1_a">Reúne pruebas, contacta al vendedor y denuncia si es posible.</p></details>
+        <details><summary data-i18n="faq_2_q">¿Cuál es la diferencia entre réplica y original?</summary><p data-i18n="faq_2_a">El producto original es fabricado por la marca. La réplica es una imitación, muchas veces ilegal.</p></details>
+        <details><summary data-i18n="faq_3_q">¿Cómo saber si una tienda es confiable?</summary><p data-i18n="faq_3_a">Compra solo en tiendas oficiales o autorizadas por la marca.</p></details>
     </section>
 
-    <!-- Sección 3: Testimonios -->
-    <section id="testimonios">
+    <section class="franja">
         <h2 data-i18n="testimonials">Testimonios</h2>
-        <blockquote>“Pensé que mis Adidas eran originales, pero esta página me ayudó a notar la diferencia. ¡Gracias!” – Ana, CDMX</blockquote>
-        <blockquote>“Subí una foto y me di cuenta que el logo estaba mal. Me salvé de una compra falsa.” – Luis, Bogotá</blockquote>
+        <blockquote data-i18n="testimonial_1">“Pensé que mis Adidas eran originales, pero esta página me ayudó a notar la diferencia. ¡Gracias!” – Ana, CDMX</blockquote>
+        <blockquote data-i18n="testimonial_2">“Subí una foto y me di cuenta que el logo estaba mal. Me salvé de una compra falsa.” – Luis, Bogotá</blockquote>
     </section>
 
-    <!-- Sección 4: Tiendas Oficiales -->
-    <section id="tiendas">
+    <section class="franja">
         <h2 data-i18n="official_stores">Tiendas Oficiales</h2>
         <ul>
-            <li><a href="https://www.nike.com" target="_blank">Nike Oficial</a></li>
-            <li><a href="https://www.adidas.com" target="_blank">Adidas Oficial</a></li>
-            <li><a href="https://www.gucci.com" target="_blank">Gucci Oficial</a></li>
+            <li><a href="https://www.nike.com" target="_blank">Nike</a></li>
+            <li><a href="https://www.adidas.com" target="_blank">Adidas</a></li>
+            <li><a href="https://www.gucci.com" target="_blank">Gucci</a></li>
         </ul>
     </section>
 
-    <!-- Encuesta -->
-    <section id="encuesta">
+    <section class="franja">
         <h2 data-i18n="survey">¿Tuviste una experiencia con un producto falso?</h2>
-        <p>
-            👉 <a href="https://docs.google.com/forms/d/e/1FAIpQLSfmIjYqGmB73yA7VQB_m4mRmUXLJJR719H86WQX4tLkcFjmQw/viewform" 
-            target="_blank">Contesta esta encuesta</a>
-        </p>
+        <p><a href="https://docs.google.com/forms/d/e/1FAIpQLSfmIjYqGmB73yA7VQB_m4mRmUXLJJR719H86WQX4tLkcFjmQw/viewform" target="_blank" data-i18n="survey_link">Haz clic aquí para contestar la encuesta</a></p>
     </section>
 </main>
+
+<footer class="franja-negra">
+    <p>© 2025 ¿Es Acaso Original?</p>
+</footer>
 
 <script src="script.js"></script>
 </body>

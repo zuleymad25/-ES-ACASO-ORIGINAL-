@@ -1,21 +1,35 @@
 
 body {
-    font-family: Arial, sans-serif;
-    padding: 1rem;
-    background: #fdfdfd;
-    color: #333;
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+    background: #f5f5f5;
+    color: #111;
 }
-h1, h2 {
-    color: #1a1a1a;
+.franja {
+    background-color: #fff;
+    padding: 2rem;
+    border-bottom: 2px solid #ccc;
 }
-section {
-    margin-bottom: 2rem;
-    padding: 1rem;
-    border-bottom: 1px solid #ddd;
+.franja-negra {
+    background-color: #000;
+    color: white;
+    padding: 1rem 2rem;
+    text-align: center;
 }
-blockquote {
-    font-style: italic;
-    background: #f0f0f0;
-    padding: 1rem;
-    margin: 1rem 0;
+header nav {
+    margin-top: 1rem;
+}
+section ul {
+    list-style: none;
+    padding-left: 0;
+}
+a {
+    color: #0077cc;
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+details summary {
+    cursor: pointer;
 }
